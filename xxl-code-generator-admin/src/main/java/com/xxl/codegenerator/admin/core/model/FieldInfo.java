@@ -7,6 +7,7 @@ package com.xxl.codegenerator.admin.core.model;
  */
 public class FieldInfo {
 
+    private Boolean primaryKey = false;
     private String columnName;
     private String fieldName;
     private String fieldClass;
@@ -44,4 +45,11 @@ public class FieldInfo {
         this.fieldComment = fieldComment;
     }
 
+    public Boolean getPrimaryKey() {
+        return primaryKey;
+    }
+
+    public void setPrimaryKey(Boolean primaryKey) {
+        this.primaryKey = primaryKey;
+    }
 }

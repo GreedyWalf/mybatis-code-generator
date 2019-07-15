@@ -3,7 +3,8 @@ import java.util.Map;
 /**
 * ${classInfo.classComment}
 *
-* Created by xuxueli on '${.now?string('yyyy-MM-dd HH:mm:ss')}'.
+*  @author Created by Code Generator
+*  @since '${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 public interface ${classInfo.className}Service {
 

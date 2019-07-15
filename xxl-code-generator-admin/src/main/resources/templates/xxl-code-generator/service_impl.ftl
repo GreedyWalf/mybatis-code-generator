@@ -9,7 +9,8 @@ import java.util.Map;
 /**
 * ${classInfo.classComment}
 *
-* Created by xuxueli on '${.now?string('yyyy-MM-dd HH:mm:ss')}'.
+*  @author Created by Code Generator
+*  @since '${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 @Service
 public class ${classInfo.className}ServiceImpl implements ${classInfo.className}Service {

@@ -7,37 +7,41 @@
 </#if>
 import java.io.Serializable;
 <#if importDdate?? && importDdate>
-import java.util.Date;
+    import java.util.Date;
 </#if>
 
 /**
 *  ${classInfo.classComment}
 *
-*  Created by xuxueli on '${.now?string('yyyy-MM-dd HH:mm:ss')}'.
+*  @author Created by Code Generator
+*  @since '${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
+@Data
+@Alias("${classInfo.className}")
+@TableName("${classInfo.tableName}")
 public class ${classInfo.className} implements Serializable {
-    private static final long serialVersionUID = 42L;
 
 <#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>
-<#list classInfo.fieldList as fieldItem >
-    /**
-    * ${fieldItem.fieldComment}
-    */
-    private ${fieldItem.fieldClass} ${fieldItem.fieldName};
+    <#list classInfo.fieldList as fieldItem >
+        //${fieldItem.fieldComment}
+        <#if fieldItem.primaryKey>
+            @TableId(type = IdType.ID_WORKER_STR)
+        </#if>
+        private ${fieldItem.fieldClass} ${fieldItem.fieldName};
 
-</#list>
+    </#list>
 </#if>
 
-<#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>
-<#list classInfo.fieldList as fieldItem>
-    public ${fieldItem.fieldClass} get${fieldItem.fieldName?cap_first}() {
-        return ${fieldItem.fieldName};
-    }
+<#--<#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>-->
+<#--    <#list classInfo.fieldList as fieldItem>-->
+<#--        public ${fieldItem.fieldClass} get${fieldItem.fieldName?cap_first}() {-->
+<#--        return ${fieldItem.fieldName};-->
+<#--        }-->
 
-    public void set${fieldItem.fieldName?cap_first}(${fieldItem.fieldClass} ${fieldItem.fieldName}) {
-        this.${fieldItem.fieldName} = ${fieldItem.fieldName};
-    }
+<#--        public void set${fieldItem.fieldName?cap_first}(${fieldItem.fieldClass} ${fieldItem.fieldName}) {-->
+<#--        this.${fieldItem.fieldName} = ${fieldItem.fieldName};-->
+<#--        }-->
 
-</#list>
-</#if>
+<#--    </#list>-->
+<#--</#if>-->
 }

@@ -35,7 +35,9 @@ public class StringUtils {
      */
     public static String underlineToCamelCase(String underscoreName) {
         StringBuilder result = new StringBuilder();
-        if (underscoreName != null && underscoreName.trim().length() > 0) {
+        //全部转化为小写，在将'_'转化为驼峰
+        underscoreName = underscoreName.toLowerCase();
+        if (underscoreName.trim().length() > 0) {
             boolean flag = false;
             for (int i = 0; i < underscoreName.length(); i++) {
                 char ch = underscoreName.charAt(i);
@@ -51,6 +53,7 @@ public class StringUtils {
                 }
             }
         }
+
         return result.toString();
     }
 

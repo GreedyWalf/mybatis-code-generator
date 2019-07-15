@@ -6,7 +6,8 @@ import java.util.List;
 /**
 * ${classInfo.classComment}
 *
-* Created by xuxueli on '${.now?string('yyyy-MM-dd HH:mm:ss')}'.
+*  @author Created by Code Generator
+*  @since '${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 @Component
 public interface ${classInfo.className}Dao {
